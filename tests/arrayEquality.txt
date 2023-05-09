@@ -1,0 +1,24 @@
+addi s0, zero, 12 
+addi s1, zero, 40 
+addi s6, zero, 4 
+stringequal:
+	addi s2, zero, 0
+	addi t0, zero, 0
+	Loop:
+		slli t3, t0, 2
+		add t4, t3, s0
+		add t2, t3, s1
+		lw t5, 0(t4)
+		lw t6, 0(t2)
+		bne t5, t6, cont
+		addi s2, s2, 1
+		cont:
+			addi t0, t0, 1
+			blt t0, s6, Loop
+	beq s2, s6, true
+	addi x1, zero, 0
+	jalr ra, break
+	true:
+		addi x1, zero, 1
+	break:
+	    EBREAK

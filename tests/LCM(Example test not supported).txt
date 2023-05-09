@@ -1,0 +1,14 @@
+addi s0, zero, 25
+addi s1, zero, 120
+addi s2, s0, 0
+addi t0, s1, 0
+Loop:
+	blt s2, t0, else
+	sub s2, s2, t0
+	beq zero, zero, Loop
+	else:
+		sub t0, t0, s2
+	cont:
+		bne s2, t0, Loop
+mul t0, s0, s1
+div x1, t0, s2
