@@ -1,6 +1,6 @@
 # RISC-V RV32I Simulator
 
-This is a simulator for the RISC-V RV32I instruction set architecture. It is implemented in C++ and uses the Qt framework for user interface.
+A simulator for the RISC-V RV32I instruction set architecture implemented in C++.
 
 ## Features
 
